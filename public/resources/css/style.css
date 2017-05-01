@@ -18,18 +18,22 @@ body {
 
 #headerText {
   font-size: 200%;
+  padding-top: 20;
 }
 
+
+
+
 .content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   margin-top: 120;
   margin-left: auto;
   margin-right: auto;
   right: 3%;
   left: 3%;
   width: 94%;
-  height: 38%;
-
-
   background-color: #e39a4e;
   border-radius: 15px 15px 15px 15px;
 }
@@ -120,7 +124,6 @@ ul {
 .rightCol {
   width: 68%;
   float: right;
-  padding-bottom: 20px;
 }
 
 
@@ -157,12 +160,12 @@ ul {
 }
 
 .remove {
-  width: 48%;
+  width: 100%;
   margin: 5;
 }
 
 .markpast {
-  width: 48%;
+  width: 100%;
   margin: 5;
 }
 
@@ -226,6 +229,7 @@ ul {
 }
 
 .remove {
+  width: 48%;
   background-color: #932f4a;
   border-style: none;
   border-radius: 5px 5px 5px 5px;
@@ -240,6 +244,7 @@ ul {
 }
 
 .markpast {
+  width: 48%;
   background-color: #932f4a;
   border-style: none;
   border-radius: 5px 5px 5px 5px;
