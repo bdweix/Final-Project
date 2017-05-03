@@ -19,8 +19,7 @@ let namePlayer = "Joe Shmo";
 
 let arraySpot;
 
-var leaderBoard = (localStorage.getItem('leaderB')) ? JSON.parse(localStorage.getItem('leaderB')):
-  [{
+let leaderBoard2 = [{
     name: "Joe Name",
     time: "3600"
   },
@@ -39,10 +38,10 @@ var leaderBoard = (localStorage.getItem('leaderB')) ? JSON.parse(localStorage.ge
   {
     name: "Joe Name",
     time: "3600"
-  }
+  },
 ];
 
-console.log(leaderBoard);
+
 //These 4 lines of code merge the triviaQuestions.js with javascript.js
 newScript = document.createElement('script');
 newScript.type = 'text/javascript';
@@ -271,12 +270,6 @@ function returnName() {
   return inputName;
 }
 
-function dataObjectUpdated(){
-  localStorage.setItem('leaderB', JSON.stringify(leaderBoard));
-  //console.log(JSON.stringify(leaderBoard));
-
-}
-
 function updateRecord() {
   //based on the number, should determine which ones have to go and which ones can stay
   let newEntry = {
@@ -298,7 +291,6 @@ function updateRecord() {
   console.log(leaderBoard[3].time);
   console.log(leaderBoard[4].time);
   updateTableView();
-  dataObjectUpdated();
 
 }
 
@@ -315,11 +307,8 @@ function updateTableView() {
     y[1].innerHTML = leaderBoard[counter].name;
     y[2].innerHTML = stringTime;
     counter++;
-    dataObjectUpdated();
   }
 }
-
-
 
 function endGame() {
   console.log("trying to end");
