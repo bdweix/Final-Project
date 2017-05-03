@@ -19,7 +19,8 @@ let namePlayer = "Joe Shmo";
 
 let arraySpot;
 
-let leaderBoard2 = [{
+var leaderBoard = (localStorage.getItem('leaderB')) ? JSON.parse(localStorage.getItem('leaderB')):
+  [{
     name: "Joe Name",
     time: "3600"
   },
@@ -38,10 +39,10 @@ let leaderBoard2 = [{
   {
     name: "Joe Name",
     time: "3600"
-  },
+  }
 ];
 
-
+console.log(leaderBoard);
 //These 4 lines of code merge the triviaQuestions.js with javascript.js
 newScript = document.createElement('script');
 newScript.type = 'text/javascript';
@@ -160,7 +161,7 @@ function checkGuess() {
       endGame();
 
     } else {
-      document.getElementById("userMessage").innerHTML = "Your answer: " + this.innerHTML + " was right. Here's your next question:";
+      //document.getElementById("userMessage").innerHTML = "Your answer: " + this.innerHTML + " was right. Here's your next question:";
       showQuestion();
     }
   } else {
@@ -175,7 +176,7 @@ function checkGuess() {
     setTimeout(changeBack, 1500);
     //clearInterval(flashID);
     console.log("YOU ARE WRONG");
-    document.getElementById("userMessage").innerHTML = "Your answer: " + this.id + " was INCORRECT.";
+    //document.getElementById("userMessage").innerHTML = "Your answer: " + this.id + " was INCORRECT.";
   }
 
   //totalSeconds+=5;
@@ -270,6 +271,12 @@ function returnName() {
   return inputName;
 }
 
+function dataObjectUpdated(){
+  localStorage.setItem('leaderB', JSON.stringify(leaderBoard));
+  //console.log(JSON.stringify(leaderBoard));
+
+}
+
 function updateRecord() {
   //based on the number, should determine which ones have to go and which ones can stay
   let newEntry = {
@@ -291,6 +298,7 @@ function updateRecord() {
   console.log(leaderBoard[3].time);
   console.log(leaderBoard[4].time);
   updateTableView();
+  dataObjectUpdated();
 
 }
 
@@ -307,8 +315,11 @@ function updateTableView() {
     y[1].innerHTML = leaderBoard[counter].name;
     y[2].innerHTML = stringTime;
     counter++;
+    dataObjectUpdated();
   }
 }
+
+
 
 function endGame() {
   console.log("trying to end");

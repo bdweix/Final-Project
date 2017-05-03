@@ -17,9 +17,6 @@
   float:right;
   width: 198px;
   margin-right: -200px;
-
-
-
 }
 
 #question {
@@ -34,10 +31,6 @@
 
 }
 
-#usermessage {
-  background-color: #FAA;
-  position: fixed;
-}
 
 
 #title{
@@ -48,6 +41,8 @@
 #timer {
   position: absolute;
   font-size: 15pt;
+
+
   width:60px;
   height: 30px;
   border-color: #015249;
@@ -57,6 +52,7 @@
   vertical-align: middle;
   line-height: 30px;
   left: 30%;
+
 }
 
 #endGame {
@@ -90,7 +86,7 @@
   background: blue;
 }
 .button:hover {
-  background: #015249;
+  background: #015249!important;
   font-weight: bold;
   font-style: italic;
 }
@@ -103,6 +99,10 @@
 
 #counter {
     position: absolute;
+
+    right: 30%;
+    z-index: 100;
+    float: right;
     width:60px;
     height: 30px;
     border-color: ##015249;
@@ -111,8 +111,6 @@
     text-align: center;
     vertical-align: middle;
     line-height: 30px;
-    float: right;
-    right: 30%;
     font-size: 15pt;
 }
 
@@ -140,6 +138,8 @@ body {
 }
 
 
+//THIS IS NEW
+
 #textField {
 
     font-size: 12pt;
@@ -147,6 +147,7 @@ body {
     left:40%;
 }
 
+//END OF NEW
 
 #dashBoard{
   width: 100%;
