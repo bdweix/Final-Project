@@ -1,6 +1,7 @@
 <html>
   <head>
-  <script src="main.js"></script>
+  <script src="javascript.js"></script>
+  <script src="triviaQuestions.js"></script>
   <!-- Content Type Meta tag -->
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -8,211 +9,95 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
 
-<title>EagleMeets</title>
+<title>SuperFunTriviaGame</title>
 
 <!-- Roboto font embed -->
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 
 <!-- Stylesheets -->
 <link rel="stylesheet" type="text/css" href="resources/css/reset.min.css">
-<link rel="stylesheet" type="text/css" href="resources/css/style.css">
+<link rel="stylesheet" type="text/css" href="resources/css/stylesheet.css">
 
-
-    <div class="fixedHeader">
-      <p id="headerText">
-        EagleMeets</p>
-      </div>
   </head>
-  <body>
-      <div class="content">
-        <div class="borderContent">
-          <div class="title">
-            <h3>Create New Office Hours</h3>
-          </div>
-          <form action="//do something here">
-              <div class="leftcol">
-                <input type="text" name="name" id="name" placeholder="Enter Name" class="rowItem"><br>
-                <input type="text" name="location" id="location" placeholder="Location" class="rowItem"><br>
-                <input type="text" name="class" id="class" placeholder="Class" class="rowItem"><br>
-                <button type="button" value="Submit" id="addMeeting" class="submit">Submit</button><br>
-                <br>
-              </div>
-              <div class="rightcol">
-                <div class="rightItem">
-                  <div class="day">Monday:</div>
-                  <div class="times">
-                    Start Time <input list="times" name="MstartTime" id="MstartTime" class="dropdown">
-                    End Time <input list="times" name="MendTime" id="MendTime" class="dropdown">
-                  </div>
-                  <div class="day">Tuesday:</div>
-                  <div class="times">
-                    Start Time <input list="times" name="TstartTime" id="TstartTime" class="dropdown">
-                    End Time <input list="times" name="TendTime" id="TendTime" class="dropdown">
-                  </div>
-                  <div class="day">Wednesday:</div>
-                  <div class="times">
-                    Start Time <input list="times" name="WstartTime" id="WstartTime" class="dropdown">
-                    End Time <input list="times" name="WendTime" id="WendTime" class="dropdown">
-                  </div>
-                  <div class="day">Thursday:</div>
-                  <div class="times">
-                    Start Time <input list="times" name="THstartTime" id="THstartTime" class="dropdown">
-                    End Time <input list="times" name="THendTime" id="THendTime" class="dropdown">
-                  </div>
-                  <div class="day">Friday:</div>
-                  <div class="times">
-                    Start Time <input list="times" name="FstartTime" id="FstartTime" class="dropdown">
-                    End Time <input list="times" name="FendTime" id="FendTime" class="dropdown">
-                  </div>
-                  <div class="day">Saturday:</div>
-                  <div class="times">
-                    Start Time <input list="times" name="SAstartTime" id="SAstartTime" class="dropdown">
-                    End Time <input list="times" name="SAendTime" id="SAendTime" class="dropdown">
-                  </div>
-                  <div class="day">Sunday:</div>
-                  <div class="times">
-                    Start Time <input list="times" name="SUstartTime" id="SUstartTime" class="dropdown">
-                    End Time <input list="times" name="SUendTime" id="SUendTime" class="dropdown">
-                  </div>
-                </div>
-                      <datalist id="times">
-                        <option value="12pm">
-                        <option value="1pm">
-                        <option value="2pm">
-                        <option value="3pm">
-                        <option value="4pm">
-                        <option value="5pm">
-                        <option value="6pm">
-                        <option value="7pm">
-                        <option value="8pm">
-                        <option value="9pm">
-                        <option value="10pm">
-                        <option value="11pm">
-                        <option value="12am">
-                        <option value="1am">
-                        <option value="2am">
-                        <option value="3am">
-                        <option value="4am">
-                        <option value="5am">
-                        <option value="6am">
-                        <option value="7am">
-                        <option value="8am">
-                        <option value="9am">
-                        <option value="10am">
-                        <option value="11am"></datalist>
-              </div>
-          </form>
-        </div>
+
+<body>
+
+  <div id="dashBoard">
+    <div id="counter">0/10</div>
+
+    <div id="time" style="position: relative">
+      <div id="timer">
+        <label id="minutes">00</label>:<label id="seconds">00</label>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="padding">
+  </div>
+
+  <div class="container">
+    <div id="endGame" style="display:none">
+      <button class='button' id="again">Play again?</button>
+    </div>
+    <div class="leader">
+      <table id="board">
+        <tr>
+          <th> Place </th>
+          <th> Name </th>
+          <th> Time </th>
+        </tr>
+        <tr>
+          <td> 1 </td>
+          <td> Evan </td>
+          <td> 05:10 </td>
+        </tr>
+        <tr>
+          <td> 2 </td>
+          <td> Blake </td>
+          <td> 07:17 </td>
+        </tr>
+        <tr>
+          <td> 3 </td>
+          <td> Riley </td>
+          <td> 10:54 </td>
+        </tr>
+        <tr>
+          <td> 4 </td>
+          <td> T-Weznerd </td>
+          <td> 17:22 </td>
+        </tr>
+        <tr>
+          <td> 5 </td>
+          <td> Prof Barry </td>
+          <td> 48:49 </td>
+        </tr>
+
+      </table>
+    </div>
+    <div class="main">
+
+      <div id="penalty"></div>
+
+      <div id="userMessage"></div>
+      <div id="question"></div>
+
+      <div id="textField" style="display: none">
+        <input type="text" id="input1" placeholder="Enter your name..." />
+        <button onclick="submitNameTime()">Submit</button>
       </div>
 
-			<div class="scroller">
-				<div class="container" id="container">
-					<!-- Uncompleted meetings -->
-					<ul class="upcoming" id="upcoming">
+      <div id="options">
+        <button class='button' id="divA"></button>
+        <button class='button' id="divB"></button>
+        <button class='button' id="divC"></button>
+        <button class='button' id="divD"></button>
+      </div>
 
-						<!--<div class="listContents">
-							<div class="basicInfo">
-								<div class="itemName">
-									Professor: Branick Weix
-								</div>
-								<div class="itemLocation">
-									Location: is here.
-								</div>
-								<div class="itemClass">
-									The class: is here.
-								</div>
-							</div>
-							<div class="itemDay">
-								<div class="itemDates">
-									Monday
-								</div>
-								<div class="itemTimes">
-									Start time is:
-								</div>
-								<div class="itemTimes">
-									End time is:
-								</div>
-							</div>
-							<div class="itemDay">
-								<div class="itemDates">
-									Tuesday
-								</div>
-								<div class="itemTimes">
-									Start time is:
-								</div>
-								<div class="itemTimes">
-									End time is:
-								</div>
-							</div>
-							<div class="itemDay">
-								<div class="itemDates">
-									Wednesday
-								</div>
-								<div class="itemTimes">
-									Start time is:
-								</div>
-								<div class="itemTimes">
-									End time is:
-								</div>
-							</div>
-							<div class="itemDay">
-								<div class="itemDates">
-									Thursday
-								</div>
-								<div class="itemTimes">
-									Start time is:
-								</div>
-								<div class="itemTimes">
-									End time is:
-								</div>
-							</div>
-							<div class="itemDay">
-								<div class="itemDates">
-									Friday
-								</div>
-								<div class="itemTimes">
-									Start time is:
-								</div>
-								<div class="itemTimes">
-									End time is:
-								</div>
-							</div>
-							<div class="itemDay">
-								<div class="itemDates">
-									Saturday
-								</div>
-								<div class="itemTimes">
-									Start time is:
-								</div>
-								<div class="itemTimes">
-									End time is:
-								</div>
-							</div>
-							<div class="itemDay">
-								<div class="itemDates">
-									Sunday
-								</div>
-								<div class="itemTimes">
-									No Post on Sundays.
-								</div>
-								<div class="itemTimes">
-									..
-								</div>
-							</div>
-							</div>-->
+    </div>
+  </div>
 
-					</ul>
+<div id="finalResult" style="display: none"> </div>
+</body>
 
-					<!-- Completed meetings -->
-					<ul class="past" id="past"></ul>
-				</div>
-			</div>
-
-
-
-				<!-- JavaScripts -->
-					<script src="resources/js/test.js"></script>
-
-
-  </body>
-  </html>
+</html>
